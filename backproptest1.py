@@ -43,7 +43,5 @@ class NeuralNetwork:
                     D.append(delta)
                     
                     D = D[::-1]
-                        #reverse deltas because we went through list in reverse
-                        #weight updates: dot product btwn A and D then multiply by learning rate, add to W
                     for layer in np.arange(0, len(self.W)):
                         self.W[layer] += -self.alpha * A[layer].T.dot(D[layer])
