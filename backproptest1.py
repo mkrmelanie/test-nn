@@ -31,10 +31,8 @@ class NeuralNetwork:
                 
                 for layer in np.arange(0, len(self.W)):
                     net = A[layer].dot(self.W[layer])
-            #feedforward part: dot product between A and W
                     out = self.activate(net)
                     A.append(out)
-            #net output added onto A
             
                 error = A[-1] - y
                 D = [error * self.dactivate(A[-1])]
